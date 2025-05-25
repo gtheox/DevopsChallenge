@@ -140,3 +140,15 @@ C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\obj\Debug\net9.0
 C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\obj\Debug\net9.0\MottuControlApi.pdb
 C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\obj\Debug\net9.0\MottuControlApi.genruntimeconfig.cache
 C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\obj\Debug\net9.0\ref\MottuControlApi.dll
+C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\bin\Debug\net9.0\out\out\web.config
+C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\bin\Debug\net9.0\out\web.config
+C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\bin\Debug\net9.0\out\appsettings.Development.json
+C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\bin\Debug\net9.0\out\appsettings.json
+C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\bin\Debug\net9.0\out\MottuControlApi.deps.json
+C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\bin\Debug\net9.0\out\MottuControlApi.runtimeconfig.json
+C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\bin\Debug\net9.0\out\MottuControlApi.staticwebassets.endpoints.json
+C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\bin\Debug\net9.0\out\out\appsettings.Development.json
+C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\bin\Debug\net9.0\out\out\appsettings.json
+C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\bin\Debug\net9.0\out\out\MottuControlApi.deps.json
+C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\bin\Debug\net9.0\out\out\MottuControlApi.runtimeconfig.json
+C:\Users\gteod\OneDrive\Área de Trabalho\Challenge 2025\Devops\bin\Debug\net9.0\out\out\MottuControlApi.staticwebassets.endpoints.json
