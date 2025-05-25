@@ -15,7 +15,7 @@ namespace MottuControlApi.Models
         // Caminho da imagem (pode ser local ou URL)
         [Required]
         [MaxLength(255)]
-        public string CaminhoImagem { get; set; }
+        public string CaminhoImagem { get; set; } = string.Empty;
 
         // Data e hora em que a imagem foi capturada
         public DateTime DataCaptura { get; set; }
@@ -24,6 +24,6 @@ namespace MottuControlApi.Models
         public int PatioId { get; set; }
 
         // Navegação: pátio ao qual essa imagem pertence
-        public Patio Patio { get; set; }
+        public Patio Patio { get; set; } = null!;
     }
 }

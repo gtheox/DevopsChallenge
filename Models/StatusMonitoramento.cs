@@ -15,7 +15,7 @@ namespace MottuControlApi.Models
         // Status atual da moto: "Disponível", "Alugada", "Manutenção"
         [Required]
         [MaxLength(30)]
-        public string Status { get; set; }
+        public string Status { get; set; } = string.Empty;
 
         // Data e hora em que o status foi registrado
         public DateTime DataHora { get; set; }
@@ -24,6 +24,6 @@ namespace MottuControlApi.Models
         public int MotoId { get; set; }
 
         // Navegação: moto que possui esse status
-        public Moto Moto { get; set; }
+        public Moto Moto { get; set; } = null!;
     }
 }

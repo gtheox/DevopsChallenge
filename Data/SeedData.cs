@@ -1,5 +1,8 @@
+using System;
+using System.Collections.Generic;
 using MottuControlApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MottuControlApi.Data
 {
@@ -10,31 +13,50 @@ namespace MottuControlApi.Data
             using var context = new AppDbContext(
                 serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>());
 
-            if (context.Patios.Any()) return; // Se já tem dados, não insere novamente
+            // Substituição de Any() por Count() para evitar problema com Oracle
+            if (context.Patios.Count() > 0) return;
 
-            // Criar Pátio
+            // Criação do pátio
             var patio = new Patio { Nome = "Pátio Central" };
             context.Patios.Add(patio);
             context.SaveChanges();
 
-            // Criar Motos
-            var moto1 = new Moto { Modelo = "Honda Biz", Placa = "ABC1234", Status = "Disponível", PatioId = patio.Id };
-            var moto2 = new Moto { Modelo = "Yamaha Neo", Placa = "XYZ5678", Status = "Alugada", PatioId = patio.Id };
+            // Criação de motos
+            var motos = new List<Moto>
+            {
+                new Moto { Modelo = "Honda Biz 110i", Placa = "ABC1D23", Status = "Disponível", PatioId = patio.Id },
+                new Moto { Modelo = "Yamaha Neo 125", Placa = "XYZ4G56", Status = "Alugada", PatioId = patio.Id },
+                new Moto { Modelo = "Honda Pop 100", Placa = "DEF7H89", Status = "Manutenção", PatioId = patio.Id },
+                new Moto { Modelo = "Shineray Worker 125", Placa = "GHI1J23", Status = "Disponível", PatioId = patio.Id },
+                new Moto { Modelo = "Suzuki Yes 125", Placa = "KLM4N56", Status = "Alugada", PatioId = patio.Id }
+            };
 
-            context.Motos.AddRange(moto1, moto2);
+            context.Motos.AddRange(motos);
             context.SaveChanges();
 
-            // Criar Sensores
-            var sensor1 = new SensorIoT { Nome = "Sensor GPS", Tipo = "GPS", MotoId = moto1.Id };
-            var sensor2 = new SensorIoT { Nome = "Sensor RFID", Tipo = "RFID", MotoId = moto2.Id };
+            // Sensores (1 por moto)
+            var sensores = new List<SensorIoT>
+            {
+                new SensorIoT { Nome = "Sensor GPS A", Tipo = "GPS", MotoId = motos[0].Id },
+                new SensorIoT { Nome = "Sensor RFID B", Tipo = "RFID", MotoId = motos[1].Id },
+                new SensorIoT { Nome = "Sensor GPS C", Tipo = "GPS", MotoId = motos[2].Id },
+                new SensorIoT { Nome = "Sensor RFID D", Tipo = "RFID", MotoId = motos[3].Id },
+                new SensorIoT { Nome = "Sensor GPS E", Tipo = "GPS", MotoId = motos[4].Id }
+            };
 
-            context.Sensores.AddRange(sensor1, sensor2);
+            context.Sensores.AddRange(sensores);
 
-            // Criar Status
-            var status1 = new StatusMonitoramento { MotoId = moto1.Id, Status = "Disponível", DataHora = DateTime.UtcNow };
-            var status2 = new StatusMonitoramento { MotoId = moto2.Id, Status = "Alugada", DataHora = DateTime.UtcNow };
+            // Status (1 histórico por moto)
+            var status = new List<StatusMonitoramento>
+            {
+                new StatusMonitoramento { MotoId = motos[0].Id, Status = "Disponível", DataHora = DateTime.UtcNow },
+                new StatusMonitoramento { MotoId = motos[1].Id, Status = "Alugada", DataHora = DateTime.UtcNow },
+                new StatusMonitoramento { MotoId = motos[2].Id, Status = "Manutenção", DataHora = DateTime.UtcNow },
+                new StatusMonitoramento { MotoId = motos[3].Id, Status = "Disponível", DataHora = DateTime.UtcNow },
+                new StatusMonitoramento { MotoId = motos[4].Id, Status = "Alugada", DataHora = DateTime.UtcNow }
+            };
 
-            context.StatusMonitoramentos.AddRange(status1, status2);
+            context.StatusMonitoramentos.AddRange(status);
 
             context.SaveChanges();
         }

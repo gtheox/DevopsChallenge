@@ -55,7 +55,7 @@ namespace MottuControlApi.Data
 
             modelBuilder.Entity<StatusMonitoramento>()
                 .HasOne(s => s.Moto)
-                .WithMany(m => m.Status)
+                .WithMany(m => m.HistoricoStatus)
                 .HasForeignKey(s => s.MotoId)
                 .OnDelete(DeleteBehavior.Restrict);
         }

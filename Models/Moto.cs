@@ -15,34 +15,28 @@ namespace MottuControlApi.Models
         // Modelo da moto (Ex: Honda Pop 110i)
         [Required]
         [MaxLength(100)]
-        public string Modelo { get; set; }
+        public string Modelo { get; set; } = string.Empty;
 
         // Placa da moto
         [Required]
         [MaxLength(10)]
-        public string Placa { get; set; }
+        public string Placa { get; set; } = string.Empty;
 
-        // Status: Disponível, Alugada, Manutenção
+        // Status atual da moto
         [Required]
         [MaxLength(30)]
-        public string Status { get; set; }
+        public string Status { get; set; } = string.Empty;
 
         // Chave estrangeira para o pátio
         public int PatioId { get; set; }
 
         // Navegação: Pátio onde a moto está
-        public Patio Patio { get; set; }
+        public Patio Patio { get; set; } = null!;
 
         // Relacionamento: sensores IoT ligados a essa moto
-        public ICollection<SensorIoT> Sensores { get; set; }
+        public ICollection<SensorIoT> Sensores { get; set; } = new List<SensorIoT>();
 
         // Relacionamento: histórico de status da moto
-        public ICollection<StatusMonitoramento> Status { get; set; }
-
-        public Moto()
-        {
-            Sensores = new List<SensorIoT>();
-            Status = new List<StatusMonitoramento>();
-        }
+        public List<StatusMonitoramento> HistoricoStatus { get; set; } = new List<StatusMonitoramento>();
     }
 }

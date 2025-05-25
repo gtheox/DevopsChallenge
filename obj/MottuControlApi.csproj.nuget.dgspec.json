@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gteod\\OneDrive\\Área de Trabalho\\Challenge 2025\\MottuControlApi\\MottuControlApi.csproj": {}
+    "C:\\Users\\gteod\\OneDrive\\Área de Trabalho\\Challenge 2025\\Devops\\MottuControlApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gteod\\OneDrive\\Área de Trabalho\\Challenge 2025\\MottuControlApi\\MottuControlApi.csproj": {
+    "C:\\Users\\gteod\\OneDrive\\Área de Trabalho\\Challenge 2025\\Devops\\MottuControlApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gteod\\OneDrive\\Área de Trabalho\\Challenge 2025\\MottuControlApi\\MottuControlApi.csproj",
+        "projectUniqueName": "C:\\Users\\gteod\\OneDrive\\Área de Trabalho\\Challenge 2025\\Devops\\MottuControlApi.csproj",
         "projectName": "MottuControlApi",
-        "projectPath": "C:\\Users\\gteod\\OneDrive\\Área de Trabalho\\Challenge 2025\\MottuControlApi\\MottuControlApi.csproj",
+        "projectPath": "C:\\Users\\gteod\\OneDrive\\Área de Trabalho\\Challenge 2025\\Devops\\MottuControlApi.csproj",
         "packagesPath": "C:\\Users\\gteod\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gteod\\OneDrive\\Área de Trabalho\\Challenge 2025\\MottuControlApi\\obj\\",
+        "outputPath": "C:\\Users\\gteod\\OneDrive\\Área de Trabalho\\Challenge 2025\\Devops\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gteod\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -53,6 +53,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Oracle.EntityFrameworkCore": {
               "target": "Package",

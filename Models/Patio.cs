@@ -15,19 +15,12 @@ namespace MottuControlApi.Models
         // Nome ou identificação do pátio
         [Required]
         [MaxLength(100)]
-        public string Nome { get; set; }
+        public string Nome { get; set; } = string.Empty;
 
         // Relacionamento: Um pátio pode ter várias motos
-        public ICollection<Moto> Motos { get; set; }
+        public ICollection<Moto> Motos { get; set; } = new List<Moto>();
 
         // Relacionamento: Um pátio pode ter várias imagens
-        public ICollection<ImagemPatio> Imagens { get; set; }
-
-        // Construtor: garante que as coleções não sejam nulas
-        public Patio()
-        {
-            Motos = new List<Moto>();
-            Imagens = new List<ImagemPatio>();
-        }
+        public ICollection<ImagemPatio> Imagens { get; set; } = new List<ImagemPatio>();
     }
 }

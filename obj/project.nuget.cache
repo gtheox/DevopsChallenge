@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u3C8F+pgkLU=",
+  "dgSpecHash": "SLbVTP5S83U=",
   "success": true,
-  "projectFilePath": "C:\\Users\\gteod\\OneDrive\\Área de Trabalho\\Challenge 2025\\MottuControlApi\\MottuControlApi.csproj",
+  "projectFilePath": "C:\\Users\\gteod\\OneDrive\\Área de Trabalho\\Challenge 2025\\Devops\\MottuControlApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gteod\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\gteod\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.5\\microsoft.aspnetcore.openapi.9.0.5.nupkg.sha512",
@@ -20,6 +20,7 @@
     "C:\\Users\\gteod\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\9.0.5\\microsoft.entityframeworkcore.analyzers.9.0.5.nupkg.sha512",
     "C:\\Users\\gteod\\.nuget\\packages\\microsoft.entityframeworkcore.design\\9.0.5\\microsoft.entityframeworkcore.design.9.0.5.nupkg.sha512",
     "C:\\Users\\gteod\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\9.0.5\\microsoft.entityframeworkcore.relational.9.0.5.nupkg.sha512",
+    "C:\\Users\\gteod\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.0\\microsoft.entityframeworkcore.tools.8.0.0.nupkg.sha512",
     "C:\\Users\\gteod\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\gteod\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.5\\microsoft.extensions.caching.abstractions.9.0.5.nupkg.sha512",
     "C:\\Users\\gteod\\.nuget\\packages\\microsoft.extensions.caching.memory\\9.0.5\\microsoft.extensions.caching.memory.9.0.5.nupkg.sha512",
