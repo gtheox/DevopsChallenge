@@ -1,19 +1,22 @@
-# Etapa 1: build com .NET 9 SDK
-FROM mcr.microsoft.com/dotnet/sdk:9.0-preview AS build
+# Usa imagem com .NET 9 SDK (preview)
+FROM mcr.microsoft.com/dotnet/sdk:9.0-preview
+
+# Atualiza pacotes e instala o Git
+RUN apt-get update && \
+    apt-get install -y git && \
+    apt-get clean
+
+# Define o diretório de trabalho
 WORKDIR /app
 
-COPY . ./
+# Clona seu projeto do GitHub (ajuste a URL se necessário)
+RUN git clone https://github.com/gtheox/DevopsChallenge.git .
+
+# Restaura pacotes e dependências
 RUN dotnet restore
-RUN dotnet publish -c Release -o out
 
-# Etapa 2: runtime com .NET 9 ASP.NET
-FROM mcr.microsoft.com/dotnet/aspnet:9.0-preview
-WORKDIR /app
-
-COPY --from=build /app/out .
-
-# Porta usada pela aplicação
+# Exponha a porta que seu projeto usa (ajuste se não for 5012)
 EXPOSE 5012
 
-# Inicialização
-ENTRYPOINT ["dotnet", "MottuControlApi.dll"]
+# Roda a aplicação
+CMD ["dotnet", "run", "--urls", "http://0.0.0.0:5012"]

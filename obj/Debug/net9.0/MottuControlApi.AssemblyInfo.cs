@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MottuControlApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93093b8b3d0ece806c58d88573af3baf43722c05")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f83fe284a1b2830b2b2bd0191a6d49dc320074e")]
 [assembly: System.Reflection.AssemblyProductAttribute("MottuControlApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MottuControlApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
