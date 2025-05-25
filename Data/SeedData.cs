@@ -13,7 +13,7 @@ namespace MottuControlApi.Data
             using var context = new AppDbContext(
                 serviceProvider.GetRequiredService<DbContextOptions<AppDbContext>>());
 
-            // Substituição de Any() por Count() para evitar problema com Oracle
+            // Verifica se já há dados inseridos
             if (context.Patios.Count() > 0) return;
 
             // Criação do pátio
@@ -21,7 +21,7 @@ namespace MottuControlApi.Data
             context.Patios.Add(patio);
             context.SaveChanges();
 
-            // Criação de motos
+            // Criação de motos associadas ao pátio
             var motos = new List<Moto>
             {
                 new Moto { Modelo = "Honda Biz 110i", Placa = "ABC1D23", Status = "Disponível", PatioId = patio.Id },
@@ -34,7 +34,7 @@ namespace MottuControlApi.Data
             context.Motos.AddRange(motos);
             context.SaveChanges();
 
-            // Sensores (1 por moto)
+            // Criação de sensores (um para cada moto)
             var sensores = new List<SensorIoT>
             {
                 new SensorIoT { Nome = "Sensor GPS A", Tipo = "GPS", MotoId = motos[0].Id },
@@ -45,8 +45,9 @@ namespace MottuControlApi.Data
             };
 
             context.Sensores.AddRange(sensores);
+            context.SaveChanges();
 
-            // Status (1 histórico por moto)
+            // Histórico de status
             var status = new List<StatusMonitoramento>
             {
                 new StatusMonitoramento { MotoId = motos[0].Id, Status = "Disponível", DataHora = DateTime.UtcNow },
@@ -57,7 +58,6 @@ namespace MottuControlApi.Data
             };
 
             context.StatusMonitoramentos.AddRange(status);
-
             context.SaveChanges();
         }
     }

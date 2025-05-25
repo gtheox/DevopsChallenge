@@ -15,11 +15,11 @@ namespace MottuControlApi.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Tabela: Patio
+            // Configuração da tabela Patio
             modelBuilder.Entity<Patio>()
                 .HasKey(p => p.Id);
 
-            // Tabela: Moto
+            // Configuração da tabela Moto
             modelBuilder.Entity<Moto>()
                 .HasKey(m => m.Id);
 
@@ -29,7 +29,7 @@ namespace MottuControlApi.Data
                 .HasForeignKey(m => m.PatioId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Tabela: SensorIoT
+            // Configuração da tabela SensorIoT
             modelBuilder.Entity<SensorIoT>()
                 .HasKey(s => s.Id);
 
@@ -39,7 +39,7 @@ namespace MottuControlApi.Data
                 .HasForeignKey(s => s.MotoId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Tabela: ImagemPatio
+            // Configuração da tabela ImagemPatio
             modelBuilder.Entity<ImagemPatio>()
                 .HasKey(i => i.Id);
 
@@ -49,7 +49,7 @@ namespace MottuControlApi.Data
                 .HasForeignKey(i => i.PatioId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // Tabela: StatusMonitoramento
+            // Configuração da tabela StatusMonitoramento
             modelBuilder.Entity<StatusMonitoramento>()
                 .HasKey(s => s.Id);
 

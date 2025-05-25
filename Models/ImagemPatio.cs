@@ -12,18 +12,18 @@ namespace MottuControlApi.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        // Caminho da imagem (pode ser local ou URL)
+        // Caminho da imagem (URL ou caminho local)
         [Required]
         [MaxLength(255)]
         public string CaminhoImagem { get; set; } = string.Empty;
 
-        // Data e hora em que a imagem foi capturada
+        // Data e hora da captura da imagem
         public DateTime DataCaptura { get; set; }
 
         // Chave estrangeira para o pátio
         public int PatioId { get; set; }
 
-        // Navegação: pátio ao qual essa imagem pertence
+        // Navegação: referência ao pátio da imagem
         public Patio Patio { get; set; } = null!;
     }
 }

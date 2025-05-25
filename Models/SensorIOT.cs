@@ -16,15 +16,15 @@ namespace MottuControlApi.Models
         [MaxLength(100)]
         public string Nome { get; set; } = string.Empty;
 
-        // Tipo de sensor (ex: GPS, RFID, etc.)
+        // Tipo do sensor (ex: GPS, RFID, etc.)
         [Required]
         [MaxLength(50)]
         public string Tipo { get; set; } = string.Empty;
 
-        // Chave estrangeira da moto associada
+        // Chave estrangeira para a moto associada
         public int MotoId { get; set; }
 
-        // Navegação: Moto à qual o sensor está vinculado
+        // Navegação: moto associada a este sensor
         public Moto Moto { get; set; } = null!;
     }
 }

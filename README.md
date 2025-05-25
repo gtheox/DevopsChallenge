@@ -61,22 +61,22 @@ Esta aplicação foi construída para otimizar o monitoramento das motos nas fil
 
 ### 2. Clonar o projeto
 
-````bash
+```bash
 git clone https://github.com/seu-usuario/MottuControlApi.git
 cd MottuControlApi
-````
+```
 
 ### 3. Restaurar dependências
 
 ```bash
 dotnet restore
-````
+```
 
 ### 4. Aplicar migrations no banco Oracle
 
 ```bash
 dotnet ef database update
-````
+```
 
 ## ▶️ Execução
 
@@ -84,13 +84,13 @@ dotnet ef database update
 
 ```bash
 dotnet run
-````
+```
 
 Acesse a documentação interativa:
 
 ```bash
-https://localhost:5001/swagger
-````
+https://localhost:5012/swagger
+```
 
 ## 📡 Rotas da API
 
@@ -104,11 +104,10 @@ https://localhost:5001/swagger
 | GET    | `/api/imagem/patio/{patioId}` | Ver imagens de um pátio específico |
 | POST   | `/api/statusmonitoramento`    | Registrar novo status da moto      |
 
-
 ## 👨‍💻 Desenvolvedores
+
 | Nome                           | RM     | GitHub                                          |
 | ------------------------------ | ------ | ----------------------------------------------- |
 | Gabriel Teodoro Gonçalves Rosa | 555962 | [gtheox](https://github.com/gtheox)             |
 | Luka Shibuya                   | 558123 | [lukashibuya](https://github.com/lukashibuya)   |
 | Eduardo Giovannini             | 555030 | [DuGiovannini](https://github.com/DuGiovannini) |
-

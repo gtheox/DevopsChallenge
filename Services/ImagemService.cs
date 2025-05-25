@@ -13,6 +13,7 @@ namespace MottuControlApi.Services
             _context = context;
         }
 
+        // Retorna todas as imagens com seus respectivos pátios
         public async Task<List<ImagemPatio>> GetAllAsync()
         {
             return await _context.ImagensPatio
@@ -20,6 +21,7 @@ namespace MottuControlApi.Services
                 .ToListAsync();
         }
 
+        // Retorna uma imagem específica por ID
         public async Task<ImagemPatio?> GetByIdAsync(int id)
         {
             return await _context.ImagensPatio
@@ -27,6 +29,7 @@ namespace MottuControlApi.Services
                 .FirstOrDefaultAsync(i => i.Id == id);
         }
 
+        // Lista todas as imagens de um determinado pátio, ordenadas por data
         public async Task<List<ImagemPatio>> GetByPatioIdAsync(int patioId)
         {
             return await _context.ImagensPatio
@@ -36,6 +39,7 @@ namespace MottuControlApi.Services
                 .ToListAsync();
         }
 
+        // Cria uma nova imagem associada a um pátio
         public async Task<ImagemPatio> CriarAsync(ImagemPatio imagem)
         {
             imagem.DataCaptura = DateTime.UtcNow;
@@ -45,6 +49,7 @@ namespace MottuControlApi.Services
             return imagem;
         }
 
+        // Atualiza uma imagem existente
         public async Task<bool> AtualizarAsync(int id, ImagemPatio imagem)
         {
             if (id != imagem.Id) return false;
@@ -65,6 +70,7 @@ namespace MottuControlApi.Services
             }
         }
 
+        // Deleta uma imagem por ID
         public async Task<bool> DeletarAsync(int id)
         {
             var imagem = await _context.ImagensPatio.FindAsync(id);

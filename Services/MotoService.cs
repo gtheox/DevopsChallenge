@@ -18,7 +18,7 @@ namespace MottuControlApi.Services
             return await _context.Motos
                 .Include(m => m.Patio)
                 .Include(m => m.Sensores)
-                .Include(m => m.Status)
+                .Include(m => m.HistoricoStatus)
                 .ToListAsync();
         }
 
@@ -27,7 +27,7 @@ namespace MottuControlApi.Services
             return await _context.Motos
                 .Include(m => m.Patio)
                 .Include(m => m.Sensores)
-                .Include(m => m.Status)
+                .Include(m => m.HistoricoStatus)
                 .FirstOrDefaultAsync(m => m.Id == id);
         }
 
@@ -35,6 +35,9 @@ namespace MottuControlApi.Services
         {
             return await _context.Motos
                 .Where(m => m.Placa.ToLower().Contains(placa.ToLower()))
+                .Include(m => m.Patio)
+                .Include(m => m.Sensores)
+                .Include(m => m.HistoricoStatus)
                 .ToListAsync();
         }
 
@@ -42,6 +45,9 @@ namespace MottuControlApi.Services
         {
             return await _context.Motos
                 .Where(m => m.Status.ToLower() == status.ToLower())
+                .Include(m => m.Patio)
+                .Include(m => m.Sensores)
+                .Include(m => m.HistoricoStatus)
                 .ToListAsync();
         }
 

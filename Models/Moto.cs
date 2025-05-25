@@ -12,7 +12,7 @@ namespace MottuControlApi.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        // Modelo da moto (Ex: Honda Pop 110i)
+        // Modelo da moto (ex: Honda Pop 110i)
         [Required]
         [MaxLength(100)]
         public string Modelo { get; set; } = string.Empty;
@@ -22,21 +22,22 @@ namespace MottuControlApi.Models
         [MaxLength(10)]
         public string Placa { get; set; } = string.Empty;
 
-        // Status atual da moto
+        // Status da moto (Disponível, Alugada, Manutenção)
         [Required]
         [MaxLength(30)]
         public string Status { get; set; } = string.Empty;
 
-        // Chave estrangeira para o pátio
+        // Chave estrangeira do pátio
+        [ForeignKey("Patio")]
         public int PatioId { get; set; }
 
-        // Navegação: Pátio onde a moto está
+        // Navegação: pátio associado à moto
         public Patio Patio { get; set; } = null!;
 
-        // Relacionamento: sensores IoT ligados a essa moto
+        // Lista de sensores conectados à moto
         public ICollection<SensorIoT> Sensores { get; set; } = new List<SensorIoT>();
 
-        // Relacionamento: histórico de status da moto
-        public List<StatusMonitoramento> HistoricoStatus { get; set; } = new List<StatusMonitoramento>();
+        // Histórico de status da moto
+        public ICollection<StatusMonitoramento> HistoricoStatus { get; set; } = new List<StatusMonitoramento>();
     }
 }

@@ -13,6 +13,7 @@ namespace MottuControlApi.Services
             _context = context;
         }
 
+        // Listar todos os pátios com suas motos e imagens
         public async Task<List<Patio>> GetAllAsync()
         {
             return await _context.Patios
@@ -21,6 +22,7 @@ namespace MottuControlApi.Services
                 .ToListAsync();
         }
 
+        // Buscar um pátio pelo ID com suas motos e imagens
         public async Task<Patio?> GetByIdAsync(int id)
         {
             return await _context.Patios
@@ -29,13 +31,17 @@ namespace MottuControlApi.Services
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
 
+        // Buscar pátios por nome contendo uma substring
         public async Task<List<Patio>> BuscarPorNomeAsync(string nome)
         {
             return await _context.Patios
-                .Where(p => p.Nome.ToLower().Contains(nome.ToLower()))
+                .Include(p => p.Motos)
+                .Include(p => p.Imagens)
+                .Where(p => p.Nome.ToLowerInvariant().Contains(nome.ToLowerInvariant()))
                 .ToListAsync();
         }
 
+        // Criar novo pátio
         public async Task<Patio> CriarAsync(Patio patio)
         {
             _context.Patios.Add(patio);
@@ -43,6 +49,7 @@ namespace MottuControlApi.Services
             return patio;
         }
 
+        // Atualizar dados de um pátio
         public async Task<bool> AtualizarAsync(int id, Patio patio)
         {
             if (id != patio.Id) return false;
@@ -63,6 +70,7 @@ namespace MottuControlApi.Services
             }
         }
 
+        // Remover pátio
         public async Task<bool> DeletarAsync(int id)
         {
             var patio = await _context.Patios.FindAsync(id);

@@ -12,15 +12,15 @@ namespace MottuControlApi.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        // Nome ou identificação do pátio
+        // Nome do pátio
         [Required]
         [MaxLength(100)]
         public string Nome { get; set; } = string.Empty;
 
-        // Relacionamento: Um pátio pode ter várias motos
+        // Lista de motos alocadas neste pátio
         public ICollection<Moto> Motos { get; set; } = new List<Moto>();
 
-        // Relacionamento: Um pátio pode ter várias imagens
+        // Lista de imagens associadas ao pátio
         public ICollection<ImagemPatio> Imagens { get; set; } = new List<ImagemPatio>();
     }
 }
